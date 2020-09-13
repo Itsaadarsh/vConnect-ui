@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <title>vConnect</title>
+    <style>
+      #btn-grad {
+        background-image: linear-gradient(to right, #ee0979 0%, #ff6a00 51%, #ee0979 100%);
+      }
+      #btn-grad:hover {
+        background-position: right center;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #485461;
+      background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+      font-family: 'Acme', sans-serif;
+    "
+  >
+    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div
+        class="max-w-md w-full rounded-lg p-10"
+        style="background-image: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%)"
+      >
+        <div>
+          <img class="mx-auto h-32 w-auto" src="./images/vconnect.png" />
+          <h1 class="mt-6 text-center text-5xl leading-9 font-extrabold text-gray-900">vConnect</h1>
+        </div>
+        <form class="mt-8" action="/home">
+          <input
+            id="ipUsername"
+            required
+            class="rounded-lg w-full px-3 py-2 placeholder-gray-500 text-gray-900 focus:outline-none"
+            placeholder="Username"
+            name="username"
+          />
+          <div class="rounded-md shadow-sm">
+            <div></div>
+          </div>
+
+          <div class="mt-6">
+            <button
+              type="submit"
+              id="btn-grad"
+              class="w-full p-1 text-2xl rounded-full text-gray-800 focus:outline-none"
+            >
+              Hop in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

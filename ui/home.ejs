@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+
+    <title>vConnect</title>
+  </head>
+  <body class="h-screen" style="background-image: linear-gradient(135deg, #2afadf 10%, #4c83ff 100%); font-family: 'Acme', sans-serif;">
+    <div id="heading" class="flex justify-center m-5">
+      <h1
+        style="background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);"
+        class="text-3xl font-bold text-center p-2 w-56 border-4 rounded-full"
+      >
+        v-Connect
+      </h1>
+    </div>
+    <div id="online" class="border-4 border-gray-700 rounded-md m-2 mt-2">
+      <div id="online-header">
+        <h1 class="text-2xl font-bold bg-green-400 p-2 underline">ONLINE <img class="float-right m-1" src="./images/search.png" width="25px" /></h1>
+        <!-- <input type="text" class="border-2 border-black w-full" placeholder="       search by username..." /> -->
+      </div>
+      <div id="online-list" style="max-height: 200px; overflow-y: auto;">
+        <ul class="text-xl bg-green-200 font-medium">
+          <% for(var data of userLog) { %>
+          <li class="flex justify-between border-b-2 border-gray-800">
+            <a id="onlineAtag" href="" class="w-full flex justify-between pl-3"><%=data.username%></a>
+            <img id="onlineImg" class="p-1 mr-3" src="./images/online.png" width="30px" height="30px" />
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <div id="offline" class="border-4 border-gray-700 rounded-md m-2 mt-6">
+      <div id="offline-header">
+        <h1 class="text-2xl font-bold bg-red-400 p-2 underline">OFFLINE <img class="float-right m-1" src="./images/search.png" width="25px" /></h1>
+        <!-- <input type="text" class="border-2 border-black w-full" placeholder="       search by username..." /> -->
+      </div>
+      <div id="offline-list" style="max-height: 300px; overflow-y: auto;">
+        <ul class="text-xl bg-red-200 font-medium h-full">
+          <li class="flex justify-between border-b-2 border-gray-800">
+            <a id="offlineAtag" href="" class="w-full flex justify-between pl-3">itsaadarsh</a>
+            <img id="offlineImg" class="p-1 mr-3" src="./images/offline.png" width="30px" height="30px" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
+      integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
