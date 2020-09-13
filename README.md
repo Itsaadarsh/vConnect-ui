@@ -1,2 +1,2 @@
-# vConnect-ui
+# vConnect-UI
 Video Call Application UI
